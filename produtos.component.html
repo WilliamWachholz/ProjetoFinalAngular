@@ -1,0 +1,128 @@
+<div class="container">
+  <mat-card>
+    <div class="text-center" style="float: right;">
+      <a class="small" routerLink="/">Sair</a>
+    </div>
+    <mat-toolbar color="primary">
+      <div align="center" style="color:white;text-align: right;">
+        Logado como {{usuario.eMail}}
+      </div>
+    </mat-toolbar>
+    <mat-card-content>
+      <form [formGroup]="produtoForm" (ngSubmit)="onFormSubmit(produtoForm.value)">
+        <table>
+          <tr>
+            <td class="tbl1">
+              <span>Tipo</span>
+              <br /><br />
+              <mat-radio-group matTooltip="Informe o tipo" formControlName="Tipo">
+                <mat-radio-button value="0">Mercadoria</mat-radio-button>
+                <mat-radio-button value="1">Serviço</mat-radio-button>
+              </mat-radio-group>
+              <mat-error>
+                <span *ngIf="!produtoForm.get('Tipo').value && produtoForm.get('Tipo').touched"></span>
+              </mat-error>
+            </td>
+            <td class="tbl1">
+              <mat-form-field class="demo-full-width">
+                <input formControlName="Nome" matTooltip="Informe o nome do produto" matInput placeholder="Nome" />
+              </mat-form-field>
+              <mat-error>
+                <span *ngIf="!produtoForm.get('Nome').value && produtoForm.get('Nome').touched"></span>
+              </mat-error>
+            </td>
+            <td class="tbl1">
+              <mat-form-field class="demo-full-width">
+                <input matInput [matDatepicker]="picker" matTooltip="Informe a data de criação"
+                       formControlName="DataCriacao" placeholder="Data de criação">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+              </mat-form-field>
+              <mat-error>
+                <span *ngIf="!produtoForm.get('DataCriacao').value && produtoForm.get('DataCriacao').touched"></span>
+              </mat-error>
+            </td>
+          </tr>
+          <tr>
+            <td class="tbl1">
+              <mat-form-field class="demo-full-width">
+                <input formControlName="EmEstoque" matTooltip="Informe a qtd em estoque"
+                       matInput placeholder="Em Estoque" />
+              </mat-form-field>
+              <mat-error>
+                <span *ngIf="!produtoForm.get('EmEstoque').value && produtoForm.get('EmEstoque').touched"></span>
+              </mat-error>
+            </td>
+            <td class="tbl1">
+              <mat-form-field class="demo-full-width">
+                <input formControlName="Reservado" matTooltip="Informe a qtd reservada"
+                       matInput placeholder="Reservado">
+              </mat-form-field>
+              <mat-error>
+                <span *ngIf="!produtoForm.get('Reservado').value && produtoForm.get('Reservado').touched"></span>
+              </mat-error>
+            </td>
+            <td>
+              <mat-form-field class="demo-full-width">
+                <input formControlName="Disponivel" matTooltip="Informe a qtd disponível"
+                       matInput placeholder="Disponivel" />
+              </mat-form-field>
+              <mat-error>
+                <span *ngIf="!produtoForm.get('Disponivel').value && produtoForm.get('Disponivel').touched"></span>
+              </mat-error>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td class="content-center">
+              <button type="submit" mat-raised-button color="accent" matTooltip="Clique para salvar"
+                      [disabled]="!produtoForm.valid">Salvar</button>
+              <button type="reset" mat-raised-button color="accent" matTooltip="Clique no botão reset"
+                      (click)="resetForm()">Reset</button>
+            </td>
+            <td>
+              <p *ngIf="registroSalvo" style="color:rgb(0,128,0); font-size:20px;  font-weight:bold"
+                 Class="success" align="left">
+                {{mensagem}}
+              </p>
+            </td>
+          </tr>
+        </table>
+        <br />
+        <br />
+        <table class="table">
+          <tr ngclass="btn-primary">
+            <th class="tbl2">Tipo</th>
+            <th class="tbl2">Nome</th>
+            <th class="tbl2">Data de Criação</th>
+            <th class="tbl2">Em Estoque</th>
+            <th class="tbl2">Reservado</th>
+            <th class="tbl2">Disponível</th>
+            <th class="tbl2">Editar</th>
+            <th class="tbl2">Deletar</th>
+          </tr>
+          <tr *ngFor="let produto of allProdutos">
+            <td class="tbl2">{{produto.tipo == 0 ? 'Mercadoria' : 'Serviço'}}</td>
+            <td class="tbl2">{{produto.nome}}</td>
+            <td class="tbl2">{{produto.dataCriacao | date: 'dd/MM/yyyy' }}</td>
+            <td class="tbl2">{{produto.emEstoque}}</td>
+            <td class="tbl2">{{produto.reservado}}</td>
+            <td class="tbl2">{{produto.disponivel}}</td>
+            <td class="tbl2">
+              <button type="button" class="btn btn-info" matTooltip="Clique para editar"
+                      (click)="CarregarProduto(produto.id)">
+                Editar
+              </button>
+            </td>
+            <td>
+              <button type="button" class="btn btn-danger" matTooltip="Clique para deletar"
+                      (click)="DeletarProduto(produto.id)">
+                Deletar
+              </button>
+            </td>
+          </tr>
+        </table>
+      </form>
+    </mat-card-content>
+  </mat-card>  
+</div>
