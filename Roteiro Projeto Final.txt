@@ -2,70 +2,75 @@
 
 Sistema: Angular Vendedores
 
-Regras de Negócio:
+Regras de NegÃ³cio:
 
-RN1 - Sistema deve armazenar usuários, com nome, sobrenome, email e senha
+RN1 - Sistema deve armazenar usuÃ¡rios, com nome, sobrenome, email e senha
 RN2 - Sistema deve armazenar vendedores, com nome, tipo (vendedor/representante),
-data cadastro, comissão base, comissão adicional e total de comissão.
-RN3 - Sistema deve ter uma tela de vendedores, onde seja possível realizar todas as operações CRUD (Create, Read, Update, Delete). Tela deve usar a biblioteca material, do angular
+data cadastro, comissÃ£o base, comissÃ£o adicional e total de comissÃ£o.
+RN3 - Sistema deve ter uma tela de vendedores, onde seja possÃ­vel realizar todas as operaÃ§Ãµes CRUD (Create, Read, Update, Delete). Tela deve usar a biblioteca material, do angular
 RN4 - Na tela de vendedores deve ter um link no canto superior direito da tela, chamado "Sair". Ao clicar nesse link, o sistema deve voltar para a tela de login. 
-RN5 - Na tela de cadastro de vendedores deve ter um link no canto superiro esquerdo da tela, chamado "Lista de Usuários". Ao clicar nesse link, o sistema deve abrir a tela de lista de usuários.
-RN6 - A tela de lista de usuários deve usar a table do tema SBAdmin2 e somente listar os usuários, sem possibilidade de alterar os dados (somente leitura)
-RN7 - Sistema deve ter uma tela de login com um botão de login, que deve validar se existe usuário e senha informados. Caso não exista nenhum usuário e senha correspondente, deve exibir um alert do bootstrap com a mensagem "email ou senha inválido(s)". Ao efetuar login com sucesso, deve ir para a tela de vendedores. A tela de login também deve ter um link para criar conta. Ao clicar no link deve abrir a tela de cadastro de usuário. Usar para essa tela, o tema login do SBAdmin2
-RN8 - Na tela de cadastro de usuário deve ser informado nome, sobrenome, email e senha (todos campos devem ser obrigatórios). Deve ter um link para voltar ao cadstro de login. Usar o tema register do SBAdmin2.
+RN5 - Na tela de cadastro de vendedores deve ter um link no canto superiro esquerdo da tela, chamado "Lista de UsuÃ¡rios". Ao clicar nesse link, o sistema deve abrir a tela de lista de usuÃ¡rios.
+RN6 - A tela de lista de usuÃ¡rios deve usar a table do tema SBAdmin2 e somente listar os usuÃ¡rios, sem possibilidade de alterar os dados (somente leitura)
+RN7 - Sistema deve ter uma tela de login com um botÃ£o de login, que deve validar se existe usuÃ¡rio e senha informados. Caso nÃ£o exista nenhum usuÃ¡rio e senha correspondente, deve exibir um alert do bootstrap com a mensagem "email ou senha invÃ¡lido(s)". Ao efetuar login com sucesso, deve ir para a tela de vendedores. A tela de login tambÃ©m deve ter um link para criar conta. Ao clicar no link deve abrir a tela de cadastro de usuÃ¡rio. Usar para essa tela, o tema login do SBAdmin2
+RN8 - Na tela de cadastro de usuÃ¡rio deve ser informado nome, sobrenome, email e senha (todos campos devem ser obrigatÃ³rios). Deve ter um link para voltar ao cadstro de login. Usar o tema register do SBAdmin2.
 
 Lista de Comandos:
 
-A - Descobrir pasta onde está a solução: no visual studio, clique com o botão direito e "Abrir pasta no gerenciador de arquivos"
-B - Abrir prompt de comando: tecla bandeira windows -> digitar powershell, clique com o botão direito, "Executar como Administrador"
-C - Criar nova aplicação angular: ng new nomeApp
+A - Descobrir pasta onde estÃ¡ a soluÃ§Ã£o: no visual studio, clique com o botÃ£o direito e "Abrir pasta no gerenciador de arquivos"
+B - Abrir prompt de comando: tecla bandeira windows -> digitar powershell, clique com o botÃ£o direito, "Executar como Administrador"
+C - Criar nova aplicaÃ§Ã£o angular: ng new nomeApp
 D - Criar novo componente angular: ng g c nomeComponente
-E - Criar novo serviço angular: ng g s nomeServico
+E - Criar novo serviÃ§o angular: ng g s nomeServico
 F - Criar nova classe angular: ng g class nomeClasse
 G - Instalar angular material: 
 npm install --save @angular/material @angular/cdk @angular/animations
-H - Realizar migração via entity framework: add-migration definirUmNomeAindaNaoUsado -context nomeDbContext
+H - Realizar migraÃ§Ã£o via entity framework: add-migration definirUmNomeAindaNaoUsado -context nomeDbContext
 I - Realizar update base de dados via entity framework: update-database -context nomeDbContext
 J - Instalar tema SBAdmin2: acessar url e efetuar download: https://startbootstrap.com/themes/sb-admin-2/. Descompactar e jogar as pastas css, img, js, scss, vendor na pasta wwwroot do projeto. 
-K - Criar novo controller: clicar com o botão direito no projeto do visual studio, e escolher adicionar -> controlador. Escolher a opção "Controlador API com ações de leitura/gravação"
+K - Criar novo controller: clicar com o botÃ£o direito no projeto do visual studio, e escolher adicionar -> controlador. Escolher a opÃ§Ã£o "Controlador API com aÃ§Ãµes de leitura/gravaÃ§Ã£o"
 L - Abrir terminal NuGet: pelo visual studio, ir em ferramentas -> gerenciador de pacotes do nuget -> console do gerenciador de pacotes
 
 Passos:
 
-1 - Criar nova solução web no visual studio, do tipo Angular, chamada AngularVendedores
-2 - Abrir prompt de comando (B), ir na pasta do projeto (A) e criar nova aplicação angular (C), chamada VendedorApp
+1 - Criar nova soluÃ§Ã£o web no visual studio, do tipo Angular, chamada AngularVendedores
+2 - Abrir prompt de comando (B), ir na pasta do projeto (A) e criar nova aplicaÃ§Ã£o angular (C), chamada VendedorApp
 3 - Instalar tema (J)
-4 - Substituir, na classe Startup, a aplicação default "ClientApp", pela recém criada "VendedorApp"
+4 - Substituir, na classe Startup, a aplicaÃ§Ã£o default "ClientApp", pela recÃ©m criada "VendedorApp"
 5 - Criar nova pasta Models
 6 - Criar model, chamado UsuarioModel, com DbContext respectivo. Usar exemplo do projeto de produtos.
 7 - Criar model, chamado VendedorModel, com DbContext respectivo. Usar exemplo do projeto de produtos.
-8 - Criar controller (K), chamado UsuarioController, com operações get e post. Usar exemplo do projeto de produtos.
-9 - Criar controller (K), chamado VendedorController, com operações get, post, put e delete. Usar exemplo do projeto de produtos.
-10 - Na classe startup, método ConfigureServices, adicionar serviços dos DbContext, referentes ao usuários e aos vendedores. Usar exemplo do projeto de produtos.
-11 - Pelo terminal NuGet (L), executar migração do entity framework (H) para o UsarioDbContext.
-12 - Pelo terminal NuGet (L), executar migração do entity framework (H) para o VendedorDbContext.
-13 - Pelo terminal NuGet (L), executar update do entity framework (I) para o UsarioDbContext.
-14 - Pelo terminal NuGet (L), executar update do entity framework (I) para o VendedorDbContext.
-15 - Abrir prompt de comando (B), ir na pasta do projeto (A) e criar classe usuario (F)
-16 - Abrir prompt de comando (B), ir na pasta do projeto (A) e criar classe vendedor (F)
-17 - Abrir prompt de comando (B), ir na pasta do projeto (A) e criar serviço usuario (E)
-18 - Abrir prompt de comando (B), ir na pasta do projeto (A) e criar serviço vendedor (E)
-19 - Instalar angular material (G)
-20 - Adicionar referências necessárias no app.module.ts. Usar exemplo do projeto de produtos.
-21 - Abrir prompt de comando (B), ir na pasta do projeto (A) e criar componente login (D)
-22 - Abrir prompt de comando (B), ir na pasta do projeto (A) e criar componente vendedor (D)
-23 - Abrir prompt de comando (B), ir na pasta do projeto (A) e criar componente cadastro-vendedor (D)
-24 - Abrir prompt de comando (B), ir na pasta do projeto (A) e criar componente lista-vendedor (D)
-25 - Alterar componente de login (html e ts). Usar exemplo do projeto de produtos.
-26 - Alterar componente de cadastro-usuario (html e ts). Usar exemplo do projeto de produtos.
-27 - Alterar componente de vendedor (html e ts). Usar exemplo do projeto de produtos.
-28 - Alterar componente de lista-usuario (html e ts). Pegar html e ts disponibilizado no github.
-29 - Incluir o seguinte div, no html do vendedor, para ir para a tela de lista de usuários. Lembrar que o mesmo deve ser apresentado na tela na mesma linha que o link de sair.
+8 - Criar controller (K), chamado UsuarioController, com operaÃ§Ãµes get e post. Usar exemplo do projeto de produtos.
+9 - Criar controller (K), chamado VendedorController, com operaÃ§Ãµes get, post, put e delete. Usar exemplo do projeto de produtos.
+10 - Na classe startup, mÃ©todo ConfigureServices, adicionar serviÃ§os dos DbContext, referentes ao usuÃ¡rios e aos vendedores. Usar exemplo do projeto de produtos.
+11 - Criar a strig de conexÃ£o no arquivo appsetting.json 
+
+ "ConnectionStrings": {
+    "Connection": "Data Source=DESKTOP-CV0FR9L;Initial Catalog=PESSOA;Integrated Security=True"
+  } 
+12 - Pelo terminal NuGet (L), executar migraÃ§Ã£o do entity framework (H) para o UsarioDbContext.
+13 - Pelo terminal NuGet (L), executar migraÃ§Ã£o do entity framework (H) para o VendedorDbContext.
+14 - Pelo terminal NuGet (L), executar update do entity framework (I) para o UsarioDbContext.
+15 - Pelo terminal NuGet (L), executar update do entity framework (I) para o VendedorDbContext.
+16 - Abrir prompt de comando (B), ir na pasta do projeto (A) e criar classe usuario (F)
+17 - Abrir prompt de comando (B), ir na pasta do projeto (A) e criar classe vendedor (F)
+18 - Abrir prompt de comando (B), ir na pasta do projeto (A) e criar serviÃ§o usuario (E)
+19 - Abrir prompt de comando (B), ir na pasta do projeto (A) e criar serviÃ§o vendedor (E)
+20 - Instalar angular material (G)
+21 - Adicionar referÃªncias necessÃ¡rias no app.module.ts. Usar exemplo do projeto de produtos.
+22 - Abrir prompt de comando (B), ir na pasta do projeto (A) e criar componente login (D)
+23 - Abrir prompt de comando (B), ir na pasta do projeto (A) e criar componente vendedor (D)
+24 - Abrir prompt de comando (B), ir na pasta do projeto (A) e criar componente cadastro-vendedor (D)
+25 - Abrir prompt de comando (B), ir na pasta do projeto (A) e criar componente lista-vendedor (D)
+26 - Alterar componente de login (html e ts). Usar exemplo do projeto de produtos.
+27 - Alterar componente de cadastro-usuario (html e ts). Usar exemplo do projeto de produtos.
+28 - Alterar componente de vendedor (html e ts). Usar exemplo do projeto de produtos.
+29 - Alterar componente de lista-usuario (html e ts). Pegar html e ts disponibilizado no github.
+30 - Incluir o seguinte div, no html do vendedor, para ir para a tela de lista de usuÃ¡rios. Lembrar que o mesmo deve ser apresentado na tela na mesma linha que o link de sair.
 
 <div class="text-center" style="float: left">
-	<a class="small" routerLink="/lista-usuario">Lista de Usuáros</a>
+	<a class="small" routerLink="/lista-usuario">Lista de UsuÃ¡ros</a>
 </div>
 
-30 - Adicionar rotas no app.routing.ts. Usar exemplo do projeto de produtos.
-31 - Mudar app.component.html para ter somente o conteúdo: <router-outlet></router-outlet>
-32 - Rodar o projeto
+31 - Adicionar rotas no app.routing.ts. Usar exemplo do projeto de produtos.
+32 - Mudar app.component.html para ter somente o conteÃºdo: <router-outlet></router-outlet>
+33 - Rodar o projeto
