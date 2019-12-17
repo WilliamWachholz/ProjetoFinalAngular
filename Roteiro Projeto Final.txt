@@ -58,7 +58,7 @@ Passos:
 17 - Abrir prompt de comando (B), ir na pasta do projeto (A) e criar classe vendedor (F)
 18 - Abrir prompt de comando (B), ir na pasta do projeto (A) e criar serviço usuario (E)
 19 - Abrir prompt de comando (B), ir na pasta do projeto (A) e criar serviço vendedor (E)
-20 - Instalar angular material (G)
+20 - Abrir prompt de comando (B) e instalar angular material (G)
 21 - Adicionar referências necessárias no app.module.ts. Usar exemplo do projeto de produtos.
 22 - Abrir prompt de comando (B), ir na pasta do projeto (A) e criar componente login (D)
 23 - Abrir prompt de comando (B), ir na pasta do projeto (A) e criar componente vendedor (D)
