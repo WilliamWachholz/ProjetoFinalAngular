@@ -36,6 +36,9 @@ Passos:
 2 - Abrir prompt de comando (B), ir na pasta do projeto (A) e criar nova aplicação angular (C), chamada VendedorApp
 3 - Instalar tema (J)
 4 - Substituir, na classe Startup, a aplicação default "ClientApp", pela recém criada "VendedorApp"
+4.1 - Clicar com botão direito na solução e escolher Gerenciar Pacotes do Nuget.
+4.1.1 - Procurar pacote Install Microsoft.AspNetCore.Mvc.NewtonsoftJson e instalar.
+4.2 - Na classe startup, método ConfigureServices, adicionar a linha: services.AddControllers().AddNewtonsoftJson();
 5 - Criar nova pasta Models
 6 - Criar model, chamado UsuarioModel, com DbContext respectivo. Usar exemplo do projeto de produtos.
 7 - Criar model, chamado VendedorModel, com DbContext respectivo. Usar exemplo do projeto de produtos.
@@ -59,8 +62,8 @@ Passos:
 21 - Adicionar referências necessárias no app.module.ts. Usar exemplo do projeto de produtos.
 22 - Abrir prompt de comando (B), ir na pasta do projeto (A) e criar componente login (D)
 23 - Abrir prompt de comando (B), ir na pasta do projeto (A) e criar componente vendedor (D)
-24 - Abrir prompt de comando (B), ir na pasta do projeto (A) e criar componente cadastro-vendedor (D)
-25 - Abrir prompt de comando (B), ir na pasta do projeto (A) e criar componente lista-vendedor (D)
+24 - Abrir prompt de comando (B), ir na pasta do projeto (A) e criar componente cadastro-usuario (D)
+25 - Abrir prompt de comando (B), ir na pasta do projeto (A) e criar componente lista-usuario (D)
 26 - Alterar componente de login (html e ts). Usar exemplo do projeto de produtos.
 27 - Alterar componente de cadastro-usuario (html e ts). Usar exemplo do projeto de produtos.
 28 - Alterar componente de vendedor (html e ts). Usar exemplo do projeto de produtos.
