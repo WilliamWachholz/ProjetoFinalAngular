@@ -59,6 +59,8 @@ Passos:
 18 - Abrir prompt de comando (B), ir na pasta do projeto (A) e criar serviço usuario (E)
 19 - Abrir prompt de comando (B), ir na pasta do projeto (A) e criar serviço vendedor (E)
 20 - Abrir prompt de comando (B) e instalar angular material (G)
+20.1 - Adicionar no styles.css a seguinte linha:
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
 21 - Adicionar referências necessárias no app.module.ts. Usar exemplo do projeto de produtos.
 22 - Abrir prompt de comando (B), ir na pasta do projeto (A) e criar componente login (D)
 23 - Abrir prompt de comando (B), ir na pasta do projeto (A) e criar componente vendedor (D)
